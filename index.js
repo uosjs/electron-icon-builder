@@ -39,17 +39,21 @@ function createPNGs(position) {
       createPNGs(position + 1);
     } else {
       // done, generate the icons
+      ensureDirExists(macOutputDir);
       icongen(PNGoutputDir, macOutputDir, {
-        type: "png",
-        names: { icns: "icon" },
-        modes: ["icns"],
+        icns: {
+          name: "icon",
+          sizes: pngSizes
+        },
         report: true
       })
         .then(() => {
+          ensureDirExists(winOutputDir);
           icongen(PNGoutputDir, winOutputDir, {
-            type: "png",
-            names: { ico: "icon" },
-            modes: ["ico"],
+            ico: {
+              name: "icon",
+              sizes: pngSizes
+            },
             report: true
           })
             .then(() => {
@@ -92,17 +96,12 @@ function createPNG(size, callback) {
   var fileName = size.toString() + ".png";
 
   // make dir if does not exist
-  if (!fs.existsSync(output)) {
-    fs.mkdirSync(output);
+  ensureDirExists(output);
+  ensureDirExists(oSub);
+  if (!flatten) {
+    ensureDirExists(PNGoutputDir);
   }
-  // make sub dir if does not exist
-  if (!fs.existsSync(oSub)) {
-    fs.mkdirSync(oSub);
-  }
-  // make dir if does not exist
-  if (!flatten && !fs.existsSync(PNGoutputDir)) {
-    fs.mkdirSync(PNGoutputDir);
-  }
+
   Jimp.read(input, function(err, image) {
     if (err) {
       callback(err, null);
@@ -116,4 +115,10 @@ function createPNG(size, callback) {
   }).catch(function(err) {
     callback(err, null);
   });
+}
+
+function ensureDirExists(dir) {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
 }
