@@ -1,29 +1,29 @@
-## electron-icon-maker
+## electron-icon-builder
 
 #### Global usage
 
 Install globally using
 
 ```
-npm install -g electron-icon-maker
+npm install -g electron-icon-builder
 ```
 
 To use
 
 ```
-electron-icon-maker --input=/absolute/path/file.png --output=./relative/path/to/folder
+electron-icon-builder --input=/absolute/path/file.png --output=./relative/path/to/folder
 ```
 
 #### Local usage
 
 Install locally
 ```
-npm install --save-dev electron-icon-maker
+npm install --save-dev electron-icon-builder
 ```
 
 To use
 ```
-./node_modules/.bin/electron-icon-maker --input=/absolute/path/file.png --output=./relative/path/to/folder
+./node_modules/.bin/electron-icon-builder --input=/absolute/path/file.png --output=./relative/path/to/folder
 ```
 
 #### Arguments

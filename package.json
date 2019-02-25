@@ -1,9 +1,9 @@
 {
-  "name": "electron-icon-maker",
+  "name": "electron-icon-builder",
   "version": "0.0.3",
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "bin": {
-    "electron-icon-maker": "index.js"
+    "electron-icon-builder": "index.js"
   },
   "main": "index.js",
   "scripts": {
@@ -11,22 +11,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaretburkett/electron-icon-maker.git"
+    "url": "git+https://github.com/safu9/electron-icon-builder.git"
   },
   "keywords": [
     "electron",
     "icon",
-    "maker",
+    "builder",
     "icns",
     "png",
     "ico"
   ],
-  "author": "Jaret Burkett <jaretburkett@gmail.com> (https://github.com/jaretburkett/)",
+  "author": "Safu9 <safu9.dev@gmail.com> (https://github.com/safu9/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jaretburkett/electron-icon-maker/issues"
+    "url": "https://github.com/safu9/electron-icon-builder/issues"
   },
-  "homepage": "https://github.com/jaretburkett/electron-icon-maker",
+  "homepage": "https://github.com/safu9/electron-icon-builder",
   "dependencies": {
     "args": "^2.3.0",
     "icon-gen": "1.0.7",
