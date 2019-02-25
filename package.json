@@ -1,6 +1,6 @@
 {
   "name": "electron-icon-builder",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "bin": {
     "electron-icon-builder": "index.js"
