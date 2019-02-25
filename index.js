@@ -26,73 +26,62 @@ var PNGoutputDir = flatten ? oSub : path.join(oSub, "png");
 var macOutputDir = flatten ? oSub : path.join(oSub, "mac");
 var winOutputDir = flatten ? oSub : path.join(oSub, "win");
 
-createPNGs(0);
+createPNGs(0).catch(err => {
+  console.log(err);
+});
 
 // calls itself recursivly
-function createPNGs(position) {
-  createPNG(pngSizes[position], function(err, info) {
-    console.log(info);
-    if (err) {
-      if (err) throw new Error(err);
-    } else if (position < pngSizes.length - 1) {
-      // keep going
-      createPNGs(position + 1);
-    } else {
-      // done, generate the icons
-      ensureDirExists(macOutputDir);
-      icongen(PNGoutputDir, macOutputDir, {
-        icns: {
-          name: "icon",
-          sizes: pngSizes
-        },
-        report: true
-      })
-        .then(() => {
-          ensureDirExists(winOutputDir);
-          icongen(PNGoutputDir, winOutputDir, {
-            ico: {
-              name: "icon",
-              sizes: pngSizes
-            },
-            report: true
-          })
-            .then(() => {
-              // rename the PNGs to electron format
-              console.log("Renaming PNGs to Electron Format");
-              renamePNGs(0);
-            })
-            .catch(err => {
-              if (err) throw new Error(err);
-            });
-        })
-        .catch(err => {
-          if (err) throw new Error(err);
-        });
-    }
-  });
+async function createPNGs(position) {
+  const info = await createPNG(pngSizes[position]);
+  console.log(info);
+
+  if (position < pngSizes.length - 1) {
+    // keep going
+    createPNGs(position + 1);
+  } else {
+    // done, generate the icons
+    ensureDirExists(macOutputDir);
+    await icongen(PNGoutputDir, macOutputDir, {
+      icns: {
+        name: "icon",
+        sizes: pngSizes
+      },
+      report: true
+    });
+
+    ensureDirExists(winOutputDir);
+    await icongen(PNGoutputDir, winOutputDir, {
+      ico: {
+        name: "icon",
+        sizes: pngSizes
+      },
+      report: true
+    });
+
+    // rename the PNGs to electron format
+    console.log("Renaming PNGs to Electron Format");
+    await renamePNGs(0);
+  }
 }
 
-function renamePNGs(position) {
+async function renamePNGs(position) {
   var startName = pngSizes[position] + ".png";
   var endName = pngSizes[position] + "x" + pngSizes[position] + ".png";
-  fs.rename(
+  fs.renameSync(
     path.join(PNGoutputDir, startName),
-    path.join(PNGoutputDir, endName),
-    function(err) {
-      console.log("Renamed " + startName + " to " + endName);
-      if (err) {
-        throw err;
-      } else if (position < pngSizes.length - 1) {
-        // not done yet. Run the next one
-        renamePNGs(position + 1);
-      } else {
-        console.log("\n ALL DONE");
-      }
-    }
+    path.join(PNGoutputDir, endName)
   );
+  console.log("Renamed " + startName + " to " + endName);
+
+  if (position < pngSizes.length - 1) {
+    // not done yet. Run the next one
+    renamePNGs(position + 1);
+  } else {
+    console.log("\n ALL DONE");
+  }
 }
 
-function createPNG(size, callback) {
+async function createPNG(size) {
   var fileName = size.toString() + ".png";
 
   // make dir if does not exist
@@ -102,19 +91,11 @@ function createPNG(size, callback) {
     ensureDirExists(PNGoutputDir);
   }
 
-  Jimp.read(input, function(err, image) {
-    if (err) {
-      callback(err, null);
-    }
-    image
-      .resize(size, size)
-      .write(path.join(PNGoutputDir, fileName), function(err) {
-        var logger = "Created " + path.join(PNGoutputDir, fileName);
-        callback(err, logger);
-      });
-  }).catch(function(err) {
-    callback(err, null);
-  });
+  const image = await Jimp.read(input);
+  image.resize(size, size);
+  await image.writeAsync(path.join(PNGoutputDir, fileName));
+
+  return "Created " + path.join(PNGoutputDir, fileName);
 }
 
 function ensureDirExists(dir) {
