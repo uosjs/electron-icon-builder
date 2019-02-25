@@ -1,6 +1,8 @@
-## electron-icon-builder
+# electron-icon-builder
 
-#### Global usage
+An icon generator to generate all the icon files needed for electron packaging
+
+## Global usage
 
 Install globally using
 
@@ -14,7 +16,7 @@ To use
 electron-icon-builder --input=/absolute/path/file.png --output=./relative/path/to/folder
 ```
 
-#### Local usage
+## Local usage
 
 Install locally
 ```
@@ -26,7 +28,7 @@ To use
 ./node_modules/.bin/electron-icon-builder --input=/absolute/path/file.png --output=./relative/path/to/folder
 ```
 
-#### Arguments
+## Arguments
 
 ```
 --output, -o = [String] Folder to create files
@@ -34,10 +36,12 @@ To use
 --flatten, -f  Flatten output structure
 ```
 
-#### Recommendations
+## Recommendations
+
 Input file should be 1024px x 1024px or larger. Make sure it is a 1 to 1 aspect ratio on width to height.
 
-#### Output structure
+## Output structure
+
 ```
 [output dir]
     -[icons]
