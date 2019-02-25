@@ -31,5 +31,11 @@
     "args": "^2.3.0",
     "icon-gen": "1.0.7",
     "jimp": "^0.2.27"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
   }
 }
