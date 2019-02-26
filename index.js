@@ -42,19 +42,13 @@ async function createPNGs(position) {
     // done, generate the icons
     ensureDirExists(macOutputDir);
     await icongen(PNGoutputDir, macOutputDir, {
-      icns: {
-        name: "icon",
-        sizes: pngSizes
-      },
+      icns: { name: "icon" },
       report: true
     });
 
     ensureDirExists(winOutputDir);
     await icongen(PNGoutputDir, winOutputDir, {
-      ico: {
-        name: "icon",
-        sizes: pngSizes
-      },
+      ico: { name: "icon" },
       report: true
     });
 
