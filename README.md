@@ -1,5 +1,8 @@
 # electron-icon-builder
 
+[![npm](https://img.shields.io/npm/v/electron-icon-builder.svg?color=success)](https://www.npmjs.com/package/electron-icon-builder)
+[![dependencies status](https://david-dm.org/safu9/electron-icon-builder/status.svg)](https://david-dm.org/safu9/electron-icon-builder)
+
 An icon generator to generate all the icon files needed for electron packaging
 
 ## Global usage
