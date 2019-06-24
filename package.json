@@ -2,16 +2,14 @@
   "name": "electron-icon-builder",
   "version": "1.0.0",
   "description": "An icon generator to generate all the icon files needed for electron packaging",
-  "bin": {
-    "electron-icon-builder": "index.js"
+  "author": "Safu9 <safu9.dev@gmail.com> (https://github.com/safu9/)",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 8.0.0"
   },
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/safu9/electron-icon-builder.git"
+  "bin": {
+    "electron-icon-builder": "index.js"
   },
   "keywords": [
     "electron",
@@ -21,12 +19,17 @@
     "png",
     "ico"
   ],
-  "author": "Safu9 <safu9.dev@gmail.com> (https://github.com/safu9/)",
-  "license": "MIT",
+  "homepage": "https://github.com/safu9/electron-icon-builder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/safu9/electron-icon-builder.git"
+  },
   "bugs": {
     "url": "https://github.com/safu9/electron-icon-builder/issues"
   },
-  "homepage": "https://github.com/safu9/electron-icon-builder",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "args": "^5.0.0",
     "icon-gen": "^2.0.0",
