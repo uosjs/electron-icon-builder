@@ -14,7 +14,6 @@ args
   .option("flatten", "Flatten output structure for electron-builder", false);
 
 const flags = args.parse(process.argv);
-console.log(flags);
 
 // correct paths
 var input = path.resolve(process.cwd(), flags.input);
