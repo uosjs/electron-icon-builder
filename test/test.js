@@ -3,8 +3,13 @@
 const assert = require("assert");
 const fs = require("fs");
 const child_process = require("child_process");
+const rimraf = require("rimraf");
 
 describe("index.js", function() {
+  beforeEach(function() {
+    rimraf.sync("test/dist");
+  });
+
   it("should generate icon files", function(done) {
     this.timeout(10000);
 
