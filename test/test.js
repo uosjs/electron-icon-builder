@@ -5,12 +5,12 @@ const fs = require("fs");
 const child_process = require("child_process");
 const rimraf = require("rimraf");
 
-describe("index.js", function() {
-  beforeEach(function() {
+describe("index.js", function () {
+  beforeEach(function () {
     rimraf.sync("test/dist");
   });
 
-  it("should generate icon files", function(done) {
+  it("should generate icon files", function (done) {
     this.timeout(10000);
 
     const paths = [
@@ -24,7 +24,7 @@ describe("index.js", function() {
       "icons/png/128x128.png",
       "icons/png/256x256.png",
       "icons/png/512x512.png",
-      "icons/png/1024x1024.png"
+      "icons/png/1024x1024.png",
     ];
 
     const child = child_process.fork(
@@ -33,7 +33,7 @@ describe("index.js", function() {
       { silent: true }
     );
 
-    child.on("exit", code => {
+    child.on("exit", (code) => {
       assert.equal(code, 0, "Exit code");
       for (const path of paths) {
         assert.ok(fs.existsSync("./test/dist/" + path), path);
@@ -43,7 +43,7 @@ describe("index.js", function() {
     });
   });
 
-  it("should generate icon files with flatten option", function(done) {
+  it("should generate icon files with flatten option", function (done) {
     this.timeout(10000);
 
     const paths = [
@@ -57,7 +57,7 @@ describe("index.js", function() {
       "icons/128x128.png",
       "icons/256x256.png",
       "icons/512x512.png",
-      "icons/1024x1024.png"
+      "icons/1024x1024.png",
     ];
 
     const child = child_process.fork(
@@ -66,7 +66,7 @@ describe("index.js", function() {
       { silent: true }
     );
 
-    child.on("exit", code => {
+    child.on("exit", (code) => {
       assert.equal(code, 0, "Exit code");
       for (const path of paths) {
         assert.ok(fs.existsSync("./test/dist/" + path), path);

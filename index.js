@@ -25,7 +25,7 @@ var PNGoutputDir = flatten ? oSub : path.join(oSub, "png");
 var macOutputDir = flatten ? oSub : path.join(oSub, "mac");
 var winOutputDir = flatten ? oSub : path.join(oSub, "win");
 
-createPNGs(0).catch(err => {
+createPNGs(0).catch((err) => {
   console.log(err);
 });
 
@@ -42,13 +42,13 @@ async function createPNGs(position) {
     ensureDirExists(macOutputDir);
     await icongen(PNGoutputDir, macOutputDir, {
       icns: { name: "icon" },
-      report: true
+      report: true,
     });
 
     ensureDirExists(winOutputDir);
     await icongen(PNGoutputDir, winOutputDir, {
       ico: { name: "icon" },
-      report: true
+      report: true,
     });
 
     // rename the PNGs to electron format
