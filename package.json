@@ -5,7 +5,7 @@
   "author": "Safu9 <safu9.dev@gmail.com> (https://github.com/safu9/)",
   "license": "MIT",
   "engines": {
-    "node": ">= 8.0.0"
+    "node": ">= 10.0.0"
   },
   "main": "index.js",
   "bin": {
