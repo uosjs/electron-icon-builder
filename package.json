@@ -1,6 +1,6 @@
 {
   "name": "electron-icon-builder",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "author": "Safu9 <safu9.dev@gmail.com> (https://github.com/safu9/)",
   "license": "MIT",
