@@ -1,6 +1,6 @@
 {
   "name": "@uosjs/icon-builder",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "author": "小二狼 <zhangzhonghui@uniontech.com> (https://github.com/uosjs)",
   "license": "MIT",
