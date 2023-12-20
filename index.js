@@ -10,7 +10,7 @@ var pngSizes = [16, 24, 32, 48, 64, 128, 256, 512, 1024];
 
 args
   .option("input", "Input PNG file. Recommended (1024x1024)", "./icon.png")
-  .option("output", "Folder to output new icons folder", "./")
+  .option("output", "Folder to output new icons folder", "./icons")
   .option("flatten", "Flatten output structure for electron-builder", false);
 
 const flags = args.parse(process.argv);
@@ -19,8 +19,8 @@ const flags = args.parse(process.argv);
 var input = path.resolve(process.cwd(), flags.input);
 var output = path.resolve(process.cwd(), flags.output);
 var flatten = flags.flatten;
-var o = output;
-var oSub = path.join(o, "icons/");
+var oSub = output;
+// oSub = path.join(oSub, "icons/"); will not create new dir in output dir
 var PNGoutputDir = flatten ? oSub : path.join(oSub, "png");
 var macOutputDir = flatten ? oSub : path.join(oSub, "mac");
 var winOutputDir = flatten ? oSub : path.join(oSub, "win");

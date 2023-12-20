@@ -14,17 +14,17 @@ describe("index.js", function () {
     this.timeout(10000);
 
     const paths = [
-      "icons/mac/icon.icns",
-      "icons/win/icon.ico",
-      "icons/png/16x16.png",
-      "icons/png/24x24.png",
-      "icons/png/32x32.png",
-      "icons/png/48x48.png",
-      "icons/png/64x64.png",
-      "icons/png/128x128.png",
-      "icons/png/256x256.png",
-      "icons/png/512x512.png",
-      "icons/png/1024x1024.png",
+      "mac/icon.icns",
+      "win/icon.ico",
+      "png/16x16.png",
+      "png/24x24.png",
+      "png/32x32.png",
+      "png/48x48.png",
+      "png/64x64.png",
+      "png/128x128.png",
+      "png/256x256.png",
+      "png/512x512.png",
+      "png/1024x1024.png",
     ];
 
     const child = child_process.fork(
@@ -47,17 +47,17 @@ describe("index.js", function () {
     this.timeout(10000);
 
     const paths = [
-      "icons/icon.icns",
-      "icons/icon.ico",
-      "icons/16x16.png",
-      "icons/24x24.png",
-      "icons/32x32.png",
-      "icons/48x48.png",
-      "icons/64x64.png",
-      "icons/128x128.png",
-      "icons/256x256.png",
-      "icons/512x512.png",
-      "icons/1024x1024.png",
+      "icon.icns",
+      "icon.ico",
+      "16x16.png",
+      "24x24.png",
+      "32x32.png",
+      "48x48.png",
+      "64x64.png",
+      "128x128.png",
+      "256x256.png",
+      "512x512.png",
+      "1024x1024.png",
     ];
 
     const child = child_process.fork(
