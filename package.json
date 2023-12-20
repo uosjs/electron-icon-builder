@@ -1,15 +1,15 @@
 {
-  "name": "@uosjs/electron-icon-builder",
+  "name": "@uosjs/icon-builder",
   "version": "0.0.3",
   "description": "An icon generator to generate all the icon files needed for electron packaging",
   "author": "小二狼 <zhangzhonghui@uniontech.com> (https://github.com/uosjs)",
   "license": "MIT",
   "engines": {
-    "node": ">= 10.0.0"
+    "node": ">= 18.0.0"
   },
   "main": "index.js",
   "bin": {
-    "uosjs-electron-icon-builder": "index.js"
+    "uosjs-icon-builder": "index.js"
   },
   "keywords": [
     "electron",
