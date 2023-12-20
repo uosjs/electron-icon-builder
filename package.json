@@ -1,8 +1,8 @@
 {
-  "name": "electron-icon-builder",
-  "version": "2.0.1",
+  "name": "@uosjs/electron-icon-builder",
+  "version": "0.0.1",
   "description": "An icon generator to generate all the icon files needed for electron packaging",
-  "author": "Safu9 <safu9.dev@gmail.com> (https://github.com/safu9/)",
+  "author": "小二狼 <zhangzhonghui@uniontech.com> (https://github.com/uosjs)",
   "license": "MIT",
   "engines": {
     "node": ">= 10.0.0"
@@ -19,13 +19,13 @@
     "png",
     "ico"
   ],
-  "homepage": "https://github.com/safu9/electron-icon-builder",
+  "homepage": "https://github.com/uosjs/electron-icon-builder",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/safu9/electron-icon-builder.git"
+    "url": "git+https://github.com/uosjs/electron-icon-builder.git"
   },
   "bugs": {
-    "url": "https://github.com/safu9/electron-icon-builder/issues"
+    "url": "https://github.com/uosjs/electron-icon-builder/issues"
   },
   "scripts": {
     "test": "mocha",
